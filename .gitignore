@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+backend/log/*.log
+backend/tmp/*
+!backend/tmp/.keep
+backend/storage/*
+backend/coverage/
+frontend/node_modules/
+frontend/dist/

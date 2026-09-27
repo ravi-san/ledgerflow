@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+gem "rails", "~> 7.1"
+gem "pg"
+gem "puma"
+gem "bcrypt"
+gem "jwt"
+gem "pundit"
+gem "sidekiq"
+gem "redis"
+gem "rack-cors"
+gem "json", "< 3"
+gem "jsonapi-serializer", "~> 2.2"
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "pry"
+  gem "simplecov", require: false
+end

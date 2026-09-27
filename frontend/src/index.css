@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-line; }
+  body { @apply m-0 min-w-80 bg-canvas text-ink antialiased; }
+  button, input, select, textarea { font: inherit; }
+  button { @apply disabled:cursor-not-allowed disabled:opacity-50; }
+}
+
+@layer components {
+  .btn-primary { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-forest bg-forest px-3.5 text-sm font-semibold text-white transition hover:bg-[#19452f]; }
+  .btn-secondary { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md border bg-white px-3.5 text-sm font-semibold text-ink transition hover:bg-[#f8faf8]; }
+  .btn-danger { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-danger bg-danger px-3.5 text-sm font-semibold text-white transition hover:bg-[#8f332e]; }
+  .icon-btn { @apply inline-grid size-9 shrink-0 place-items-center rounded-md border bg-white text-[#536159] transition hover:bg-[#f6f8f6]; }
+  .field { @apply grid gap-1.5 text-xs font-semibold text-[#56635c]; }
+  .input { @apply min-h-10 w-full rounded-md border bg-white px-3 text-sm text-ink outline-none transition focus:border-moss focus:ring-2 focus:ring-[#dcebe3]; }
+  .panel { @apply border bg-white; }
+  .eyebrow { @apply text-[11px] font-bold uppercase text-[#78877f]; }
+}

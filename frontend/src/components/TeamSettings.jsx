@@ -1,0 +1,7 @@
+import { Copy, Settings } from "lucide-react";
+
+export function TeamSettings({ team, onRename, notify }) {
+  async function submit(event) { event.preventDefault(); await onRename(new FormData(event.currentTarget).get("name")); }
+  async function copyCode() { await navigator.clipboard.writeText(`${team.id}:${team.join_code}`); notify("Team ID and join code copied."); }
+  return <section className="p-5 sm:p-8"><header className="mb-5"><h2 className="text-lg font-bold">Team settings</h2><p className="mt-1 text-xs text-slate-500">Admin-only workspace controls.</p></header><div className="grid max-w-2xl gap-6"><form className="panel grid gap-4 p-5" onSubmit={submit}><div className="flex items-center gap-2 font-bold"><Settings size={18} />Team name</div><label className="field">Name<input className="input" name="name" defaultValue={team.name} required /></label><button className="btn-primary w-max">Save name</button></form><div className="panel p-5"><strong className="block text-sm">Secure join details</strong><p className="mt-1 text-xs text-slate-500">Share these only with people who should join as Viewers.</p><div className="mt-4 grid gap-2 bg-[#f4f7f4] p-3 font-mono text-xs"><span>Team ID: {team.id}</span><span className="break-all">Join code: {team.join_code}</span></div><button className="btn-secondary mt-3" onClick={copyCode}><Copy size={16} />Copy join details</button></div></div></section>;
+}
